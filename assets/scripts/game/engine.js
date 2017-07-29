@@ -27,3 +27,24 @@ const TicTacToe = function () {
 TicTacToe.prototype.fullBoard = function () {
   return !this.board.includes(null)
 }
+
+TicTacToe.prototype.changePlayer = function () {
+  if (this.player === 'x') {
+    this.player = 'o'
+  } else {
+    this.player = 'x'
+  }
+}
+
+TicTacToe.prototype.makeMove = function (square) { // get square from html ids
+  this.board[square] = this.player
+}
+
+TicTacToe.prototype.turnCount = function () { // Doesn't work yet
+  for (let i = 0; i < this.board.length; i++) {
+    if (this.board[i] === !'x' || !'o') {
+      this.turn++
+    }
+  }
+  return this.turn
+}
