@@ -24,11 +24,11 @@ const TicTacToe = function () {
   this.turn = 0
 }
 
-TicTacToe.prototype.fullBoard = function () {
+TicTacToe.prototype.fullBoard = function () { // says if the board is full or not
   return !this.board.includes(null)
 }
 
-TicTacToe.prototype.changePlayer = function () {
+TicTacToe.prototype.changePlayer = function () { // changes the current player
   if (this.player === 'x') {
     this.player = 'o'
   } else {
@@ -40,11 +40,12 @@ TicTacToe.prototype.makeMove = function (square) { // get square from html ids
   this.board[square] = this.player
 }
 
-TicTacToe.prototype.turnCount = function () { // Doesn't work yet
+TicTacToe.prototype.turnCount = function () { // Works now! lets you know what turn it is
+  let count = 0
   for (let i = 0; i < this.board.length; i++) {
-    if (this.board[i] === !'x' || !'o') {
-      this.turn++
+    if (this.board[i] === 'x' || this.board[i] === 'o') {
+      count++
     }
   }
-  return this.turn
+  this.turn = count
 }
