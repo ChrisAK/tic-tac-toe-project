@@ -20,5 +20,10 @@ const TicTacToe = function () {
     [0, 4, 8], [2, 4, 6]
   ]
   this.gameEnd = false
-  this.currenPlayer = 'x'
+  this.player = 'x'
+  this.turn = 0
+}
+
+TicTacToe.prototype.fullBoard = function () {
+  return !this.board.includes(null)
 }
