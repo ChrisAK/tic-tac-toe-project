@@ -28,7 +28,7 @@ TicTacToe.prototype.fullBoard = function () { // says if the board is full or no
   return !this.board.includes(null)
 }
 
-TicTacToe.prototype.changePlayer = function () { // changes the current player
+TicTacToe.prototype.changePlayer = function () { // changes the current player (use ternary?)
   if (this.player === 'x') {
     this.player = 'o'
   } else {
@@ -58,4 +58,15 @@ TicTacToe.prototype.getMoves = function () {
     }
   }
   return moves
+}
+
+TicTacToe.prototype.checkWinStates = function () { // TODO Not Done Yet!
+  for (let i = 0; i < this.winState.length; i++) {
+    return this.winState[i].every(x => x === this.getMoves)
+  }
+}
+// TODO look up CSS Grids & FlexBox
+
+module.exports = {
+  TicTacToe
 }
