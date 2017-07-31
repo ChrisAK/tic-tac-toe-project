@@ -49,3 +49,13 @@ TicTacToe.prototype.turnCount = function () { // Works now! lets you know what t
   }
   this.turn = count
 }
+
+TicTacToe.prototype.getMoves = function () {
+  const moves = []
+  for (let i = 0; i < this.board.length; i++) {
+    if (this.board[i] === this.player) {
+      moves.push(i)
+    }
+  }
+  return moves
+}
