@@ -59,10 +59,35 @@ TicTacToe.prototype.getMoves = function () {
   }
   return moves
 }
-
-TicTacToe.prototype.checkWinStates = function () { // TODO Not Done Yet!
+/*
+TicTacToe.prototype.checkWinStates = function (moves) { // Doesn't work
   for (let i = 0; i < this.winState.length; i++) {
-    return this.winState[i].every(x => x === this.getMoves)
+    moves.includes(this.winState[i].every())
+  }
+}
+
+TicTacToe.prototype.checkWinStates = function (moves) { // Also doesn't work
+  for (let i = 0; i < this.winState.length; i++) {
+    this.winStates[i].every((val) => moves.includes(val))
+  }
+}
+*/
+/*
+TicTacToe.prototype.checkWinStates = function (moves) { // Really doesn't work
+  return this.winState.every((e) => {
+    const included = (moves.indexOf(e) >= 0)
+    return included
+  })
+}
+*/
+
+TicTacToe.prototype.checkWinStates = function () {
+  for (let i = 0; i < this.winState.length; i++) {
+    if (this.getMoves.includes(this.winState[i])) {
+      return true
+    } else {
+      return false
+    }
   }
 }
 // TODO look up CSS Grids & FlexBox
