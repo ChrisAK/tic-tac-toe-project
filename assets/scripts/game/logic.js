@@ -59,36 +59,39 @@ TicTacToe.prototype.getMoves = function () {
   }
   return moves
 }
-/*
-TicTacToe.prototype.checkWinStates = function (moves) { // Doesn't work
-  for (let i = 0; i < this.winState.length; i++) {
-    moves.includes(this.winState[i].every())
-  }
-}
 
-TicTacToe.prototype.checkWinStates = function (moves) { // Also doesn't work
-  for (let i = 0; i < this.winState.length; i++) {
-    this.winStates[i].every((val) => moves.includes(val))
-  }
-}
-*/
-/*
-TicTacToe.prototype.checkWinStates = function (moves) { // Really doesn't work
-  return this.winState.every((e) => {
-    const included = (moves.indexOf(e) >= 0)
+TicTacToe.prototype.compareWinStates = function (playerArray, winArrays) { // checks arrays to look for match
+  return winArrays.every((e) => {
+    const included = (playerArray.indexOf(e) >= 0)
     return included
   })
 }
-*/
 
-TicTacToe.prototype.checkWinStates = function () {
+TicTacToe.prototype.checkForWin = function () { // checks for a winner
+  const moves = this.getMoves()
+  let winner = null
+
+  if (this.fullBoard()) {
+    winner = 'tie'
+    console.log(winner) // for testing purposes
+  }
+
   for (let i = 0; i < this.winState.length; i++) {
-    if (this.getMoves.includes(this.winState[i])) {
-      return true
-    } else {
-      return false
+    const won = this.compareWinStates(moves, this.winState[i])
+
+    if (won === true) {
+      winner = this.player
+      this.gameEnd = true
+      return winner + ' won the game!' // for testing purposes
     }
   }
+}
+
+TicTacToe.prototype.reset = function () { // resets the game
+  this.board = this.newBoard
+  this.gameEnd = false
+  this.player = 'x'
+  this.turn = 0
 }
 // TODO look up CSS Grids & FlexBox
 
