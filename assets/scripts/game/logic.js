@@ -82,7 +82,8 @@ TicTacToe.prototype.checkForWin = function () { // checks for a winner
     if (won === true) {
       winner = this.player
       this.gameEnd = true
-      return winner + ' won the game!' // for testing purposes
+      console.log(winner + ' won the game!') // for testing purposes
+      return winner
     }
   }
 }
