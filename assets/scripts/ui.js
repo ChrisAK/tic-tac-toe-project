@@ -1,7 +1,6 @@
 const logic = require('./game/logic')
 const events = require('./game/events')
 const store = require('./store')
-const gamm = events.game
 
 const drawMove = function (box, player) {
   box.html(player)
