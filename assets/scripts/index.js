@@ -16,8 +16,11 @@ const gameEvents = require('./game/events')
 const ui = require('./ui')
 
 $(() => {
-  ui.checkSignIn()
+  // ui.checkSignIn()
   $('.cell').on('click', function () {
     gameEvents.makeMove(this.id)
+  })
+  $('.navBtn').click(function () {
+    ui.toggleMenu()
   })
 })

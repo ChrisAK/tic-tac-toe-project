@@ -17,8 +17,16 @@ const checkSignIn = function () {
   }
 }
 
+const toggleMenu = function () {
+  $('header').toggleClass('toggle')
+  $('.main').toggleClass('push')
+  $('.overlay').toggleClass('block')
+  $('#social, .logo').toggleClass('reveal')
+}
+
 module.exports = {
   drawMove,
   promptSignIn,
-  checkSignIn
+  checkSignIn,
+  toggleMenu
 }

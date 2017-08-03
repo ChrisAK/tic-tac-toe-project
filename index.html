@@ -14,11 +14,46 @@
 </head>
 
 <body class="container-fluid">
+  <div class="container">
+
+  </div>
+  <div class="overlay"></div>
+
   <header>
-    <h1>Tic Tac Toe!</h1>
-    <h2 class="win-time"></h2>
+    <div class="navBtn">X<br>O</div>
+
+
+    <nav>
+      <form class="" id="sign-in">
+        <fieldset>
+          <h3 class="legend">Sign in!</h3>
+          <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
+          <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+          <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+      <form id="sign-out">
+        <fieldset>
+          <h3 class="legend">Sign Out!</h3>
+          <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+
+      <form class="" id="sign-up">
+        <fieldset>
+          <h3 class="legend">Sign up!</h3>
+          <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
+          <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+          <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+    </nav>
   </header>
   <main>
+    <h1>Tic Tac Toe!</h1>
+    <h2 class="win-time"></h2>
     <div>
       <table class="board">
     <tr>
@@ -50,32 +85,6 @@
     </div>
   </div>
 </main>
-<aside>
-  <form class="" id="sign-in">
-    <fieldset>
-      <legend>Sign in!</legend>
-      <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
-      <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
-      <input type="submit" name="submit" value="Sign in!">
-    </fieldset>
-  </form>
-
-  <form id="sign-out">
-    <fieldset>
-      <legend>Sign Out!</legend>
-      <input type="submit" name="submit" value="Sign out!">
-    </fieldset>
-  </form>
-
-  <form class="" id="sign-up">
-    <fieldset>
-      <legend>Sign up!</legend>
-      <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
-      <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
-      <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
-      <input type="submit" name="submit" value="Sign up!">
-    </fieldset>
-  </form>
-</aside>
+</body>
 </body>
 </html>
