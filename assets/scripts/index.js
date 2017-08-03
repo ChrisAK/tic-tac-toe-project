@@ -23,4 +23,7 @@ $(() => {
   $('.navBtn').click(function () {
     ui.toggleMenu()
   })
+  $('#reset').on('click', function () {
+    gameEvents.reset()
+  })
 })

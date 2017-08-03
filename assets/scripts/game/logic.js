@@ -22,6 +22,8 @@ const TicTacToe = function () {
   this.gameEnd = false
   this.player = 'x'
   this.turn = 0
+  this.xWins = 0
+  this.losses = 0
 }
 
 TicTacToe.prototype.fullBoard = function () { // says if the board is full or not
@@ -82,17 +84,25 @@ TicTacToe.prototype.checkForWin = function () { // checks for a winner
     if (won === true) {
       winner = this.player
       this.gameEnd = true
-    //  return winner
     }
   }
   return winner
 }
 
+TicTacToe.prototype.winCount = function () {
+  const winner = this.checkForWin()
+  if (winner === 'x') {
+    this.xWins++
+  } else if (winner === 'o') {
+    this.losses++
+  }
+}
+
 TicTacToe.prototype.reset = function () { // resets the game
-  this.board = this.newBoard
   this.gameEnd = false
   this.player = 'x'
   this.turn = 0
+  this.board = this.newBoard.slice()
 }
 // TODO look up CSS Grids & FlexBox
 

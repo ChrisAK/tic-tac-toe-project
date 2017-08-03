@@ -36,6 +36,9 @@ const makeMove = function (id) {
     if (game.turn >= 5) {
       game.checkForWin()
       winMessage()
+      game.winCount()
+      $('.wins').html(game.xWins)
+      $('.losses').html(game.losses)
     }
     game.changePlayer()
   }
@@ -50,9 +53,12 @@ const winMessage = function () {
   }
 }
 
-const reset = function () {
-  game.reset()
+const reset = function (event) {
   $('.win-time').html('')
+  $('.cell').html('')
+  game.reset()
+  $('.turns').html(game.turn)
+  console.log(game.board)
 }
 
 module.exports = {

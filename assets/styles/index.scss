@@ -62,6 +62,7 @@ label {
   padding: .8em .8em 1em;
   text-align: center;
   width: 8em;
+  display: inline-block;
 
   .turns .wins {
     background-color: transparent;
@@ -166,6 +167,14 @@ nav {
 
 .legend {
   color: #fff
+}
+
+button {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #562944;
+  background-color: #562944;
+  color: #028472;
 }
 
 /* 768 */
