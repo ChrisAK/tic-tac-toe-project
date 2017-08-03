@@ -13,9 +13,10 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 const gameLogic = require('./game/logic')
 const gameEvents = require('./game/events')
+const ui = require('./ui')
 
 $(() => {
-  // $(this).on('click', {param: this.id}, gameEvents.makeMove)
+  ui.checkSignIn()
   $('.cell').on('click', function () {
     gameEvents.makeMove(this.id)
   })

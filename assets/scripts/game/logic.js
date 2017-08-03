@@ -73,7 +73,7 @@ TicTacToe.prototype.checkForWin = function () { // checks for a winner
 
   if (this.fullBoard()) {
     winner = 'tie'
-    console.log(winner) // for testing purposes
+    this.gameEnd = true
   }
 
   for (let i = 0; i < this.winState.length; i++) {
@@ -82,10 +82,10 @@ TicTacToe.prototype.checkForWin = function () { // checks for a winner
     if (won === true) {
       winner = this.player
       this.gameEnd = true
-      console.log(winner + ' won the game!') // for testing purposes
-      return winner
+    //  return winner
     }
   }
+  return winner
 }
 
 TicTacToe.prototype.reset = function () { // resets the game

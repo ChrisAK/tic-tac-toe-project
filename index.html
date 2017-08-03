@@ -16,10 +16,8 @@
 <body class="container-fluid">
   <header>
     <h1>Tic Tac Toe!</h1>
+    <h2 class="win-time"></h2>
   </header>
-  <nav>
-
-  </nav>
   <main>
     <div>
       <table class="board">
@@ -39,12 +37,45 @@
         <td class="cell" id="8"></td>
     </tr>
 </table>
+</div>
+<br>
+  <div class="counters">
+    <div class="box">
+        <label for="qty"><abbr title="Turn Counter">Turn</abbr></label>
+        <h3 class="turns">0</h3>
     </div>
-  </main>
-  <footer>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </footer>
-</body>
+    <div class="box">
+        <label for="qty"><abbr title="Win Counter">Wins</abbr></label>
+        <h3 class="wins">0</h3>
+    </div>
+  </div>
+</main>
+<aside>
+  <form class="" id="sign-in">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
+      <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+      <input type="submit" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
 
+  <form id="sign-out">
+    <fieldset>
+      <legend>Sign Out!</legend>
+      <input type="submit" name="submit" value="Sign out!">
+    </fieldset>
+  </form>
+
+  <form class="" id="sign-up">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
+      <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+      <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+      <input type="submit" name="submit" value="Sign up!">
+    </fieldset>
+  </form>
+</aside>
+</body>
 </html>
