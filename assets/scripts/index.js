@@ -14,6 +14,7 @@ $(() => {
 const gameLogic = require('./game/logic')
 const gameEvents = require('./game/events')
 const ui = require('./ui')
+const authEvents = require('./game/events')
 
 $(() => {
   // ui.checkSignIn()
@@ -26,4 +27,5 @@ $(() => {
   $('#reset').on('click', function () {
     gameEvents.reset()
   })
+  authEvents.addHandlers()
 })

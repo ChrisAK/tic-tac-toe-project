@@ -3,6 +3,8 @@
 const logic = require('./logic')
 const ui = require('../ui')
 const store = require('../store')
+const api = require('../auth/api')
+const getFormFields = require('../../../lib/get-form-fields.js')
 
 const game = new logic.TicTacToe()
 
@@ -25,7 +27,7 @@ const makeMove = function (id) {
   const valid = validMove($box)
   const ready = readyUser()
 
-  if (valid /* && ready */) {
+  if (valid /*&& ready*/) {
     game.makeMove(id)
     ui.drawMove($box, game.player)
     game.turnCount()
@@ -61,9 +63,49 @@ const reset = function (event) {
   console.log(game.board)
 }
 
+const onSignUp = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.signUp(data)
+    .done(ui.success)
+    .fail(ui.fail)
+}
+
+const onSignIn = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.signIn(data)
+    .done(ui.signInSuccess)
+    .fail(ui.fail)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.signOut(data)
+    .done(ui.signOutSuccess)
+    .fail(ui.fail)
+}
+
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.changePassword(data)
+    .done(ui.changePasswordSuccess)
+    .fail(ui.fail)
+}
+
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('submit', onSignOut)
+  $('#change-password').on('submit', onChangePassword)
+}
+
 module.exports = {
   makeMove,
   game,
   winMessage,
+  addHandlers,
   reset
 }

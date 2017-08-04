@@ -3,4 +3,11 @@
 const store = {
 }
 
-module.exports = store
+const user = {
+  users: []
+}
+
+module.exports = {
+  store,
+  user
+}

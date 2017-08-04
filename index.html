@@ -24,6 +24,8 @@
 
 
     <nav>
+      <br>
+      <br>
       <form class="" id="sign-in">
         <fieldset>
           <h3 class="legend">Sign in!</h3>
@@ -47,6 +49,14 @@
           <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
           <input type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+      <form id="change-password">
+        <fieldset>
+          <h3 class="legend">Change Password!</h3>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
         </fieldset>
       </form>
     </nav>
