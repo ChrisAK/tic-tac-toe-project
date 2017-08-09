@@ -42,10 +42,12 @@ const changePasswordSuccess = () => {
 
 const success = (data) => {
   console.log(data)
+  $('#sign-up-error').addClass('hidden')
 }
 
 const failure = (error) => {
   console.error(error)
+  $('#sign-up-error').removeClass('hidden')
 }
 
 module.exports = {

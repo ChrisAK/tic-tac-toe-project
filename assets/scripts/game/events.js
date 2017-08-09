@@ -49,7 +49,7 @@ const makeMove = function (id) {
 const winMessage = function () {
   const winner = game.checkForWin()
   if (game.gameEnd && !game.fullBoard()) {
-    $('.win-time').html(winner.toUpperCase() + ' has won!')
+    $('.win-time').html('It\'s a ' + winner.toUpperCase() + '!')
   } else if (game.gameEnd && game.fullBoard()) {
     $('.win-time').html('It\'s a ' + winner.toUpperCase() + '!')
   }
@@ -68,7 +68,7 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   api.signUp(data)
     .done(ui.success)
-    .fail(ui.fail)
+    .fail(ui.failure)
 }
 
 const onSignIn = function (event) {
@@ -76,7 +76,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.fail)
+    .fail(ui.failure)
 }
 
 const onSignOut = function (event) {
@@ -84,7 +84,7 @@ const onSignOut = function (event) {
   const data = getFormFields(event.target)
   api.signOut(data)
     .done(ui.signOutSuccess)
-    .fail(ui.fail)
+    .fail(ui.failure)
 }
 
 const onChangePassword = function (event) {
@@ -92,7 +92,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(event.target)
   api.changePassword(data)
     .done(ui.changePasswordSuccess)
-    .fail(ui.fail)
+    .fail(ui.failure)
 }
 
 const addHandlers = () => {
