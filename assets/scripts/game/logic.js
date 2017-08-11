@@ -104,6 +104,7 @@ TicTacToe.prototype.reset = function () { // resets the game
   this.turn = 0
   this.board = this.newBoard.slice()
 }
+
 // TODO look up CSS Grids & FlexBox
 
 module.exports = {

@@ -11,7 +11,6 @@ $(() => {
 // const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
-const gameLogic = require('./game/logic')
 const gameEvents = require('./game/events')
 const ui = require('./ui')
 const authEvents = require('./game/events')
@@ -26,6 +25,14 @@ $(() => {
   })
   $('#reset').on('click', function () {
     gameEvents.reset()
+  })
+  $('#start-game').on('click', function () {
+    gameEvents.onCreateGame()
+    $('#board').removeClass('hidden')
+    $('#start-game').addClass('hidden')
+  })
+  $('#get-games').on('click', function () {
+    gameEvents.onGetGame()
   })
   authEvents.addHandlers()
 })
