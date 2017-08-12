@@ -20,7 +20,7 @@
   <div class="overlay"></div>
 
   <header>
-    <div class="navBtn">X<br>O</div>
+    <div class="navBtn"><img src="./assets/styles/pictures/mario-face.jpg" alt="Mario Head"></div>
 
 
     <nav>
@@ -32,6 +32,7 @@
           <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
           <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
           <input type="submit" name="submit" value="Sign in!">
+          <p class="hidden" id="sign-in-error">Email or Password Incorrect</p>
         </fieldset>
       </form>
 
@@ -49,7 +50,7 @@
           <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
           <input type="submit" name="submit" value="Sign up!">
-          <p class="hidden" id="sign-up-error">Username Taken or Passwords Don't Match</p>
+          <p class="hidden" id="sign-up-error">Email Taken or Passwords Don't Match</p>
         </fieldset>
       </form>
       <form id="change-password">
@@ -58,12 +59,16 @@
           <input type="password" name="passwords[old]" value="" placeholder="Old Password">
           <input type="password" name="passwords[new]" value="" placeholder="New Password">
           <input type="submit" name="submit" value="Change Password">
+          <p class="hidden" id="change-password-success">Password Changed</p>
+          <p class="hidden" id="change-password-failure">Incorrect Info</p>
         </fieldset>
       </form>
     </nav>
   </header>
   <main>
-    <h1>Tic Tac Toe!</h1>
+    <br>
+    <div><img src="./assets/styles/pictures/Paper-Mario-icon.png" alt="Mario Head"></div>
+    <h1>It's-a me! Tic Tac Toe!</h1>
     <h5 class="hidden" id="prompt-sign-in">SIGN IN! PLEASE!</h5>
     <h2 class="win-time"></h2>
     <div>

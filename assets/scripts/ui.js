@@ -54,16 +54,33 @@ const signOutSuccess = () => {
 
 const changePasswordSuccess = () => {
   console.log('Password Successfully Changed.')
+  $('#change-password-success').removeClass('hidden')
+  $('#change-password-failure').addClass('hidden')
 }
 
 const success = (data) => {
   console.log(data)
   $('#sign-up-error').addClass('hidden')
+  $('#sign-in-error').addClass('hidden')
 }
 
 const failure = (error) => {
   console.error(error)
+}
+
+const signUpFailure = (error) => {
+  console.error(error)
   $('#sign-up-error').removeClass('hidden')
+}
+
+const signInFailure = (error) => {
+  console.error(error)
+  $('#sign-in-error').removeClass('hidden')
+}
+
+const changePasswordFailure = (error) => {
+  console.log(error)
+  $('#change-password-failure').removeClass('hidden')
 }
 
 const createGameSuccess = (data) => {
@@ -81,16 +98,19 @@ const getGameSuccess = function (data) {
 }
 
 module.exports = {
-  failure,
+  signUpFailure,
   success,
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
+  changePasswordFailure,
   drawMove,
   promptSignIn,
   checkSignIn,
   toggleMenu,
   createGameSuccess,
   updateGameSuccess,
-  getGameSuccess
+  getGameSuccess,
+  signInFailure,
+  failure
 }

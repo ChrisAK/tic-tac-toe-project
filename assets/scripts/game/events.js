@@ -52,9 +52,9 @@ const makeMove = function (id) {
 const winMessage = function () {
   const winner = game.checkForWin()
   if (game.gameEnd && !game.fullBoard()) {
-    $('.win-time').html('It\'s a ' + winner.toUpperCase() + '!')
+    $('.win-time').html('It\'s-a ' + winner.toUpperCase() + '!')
   } else if (game.gameEnd && game.fullBoard()) {
-    $('.win-time').html('It\'s a ' + winner.toUpperCase() + '!')
+    $('.win-time').html('It\'s-a ' + winner.toUpperCase() + '!')
   }
 }
 
@@ -73,7 +73,7 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
   api.signUp(data)
     .done(ui.success)
-    .fail(ui.failure)
+    .fail(ui.signUpFailure)
 }
 
 const onSignIn = function (event) {
@@ -81,7 +81,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure)
+    .fail(ui.signInFailure)
 }
 
 const onSignOut = function (event) {
@@ -97,7 +97,7 @@ const onChangePassword = function (event) {
   const data = getFormFields(event.target)
   api.changePassword(data)
     .done(ui.changePasswordSuccess)
-    .fail(ui.failure)
+    .fail(ui.changePasswordFailure)
 }
 
 const onCreateGame = function (event) {
