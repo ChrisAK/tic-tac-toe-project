@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div class="container">
+
+  </div>
+  <div class="overlay"></div>
+
+  <header>
+    <div class="navBtn"><img src="https://raw.githubusercontent.com/ChrisAK/tic-tac-toe-project/master/assets/styles/pictures/mario-face.jpg" alt="Mario Head"></div>
+
+
+    <nav>
+      <br>
+      <br>
+      <form class="" id="sign-in">
+        <fieldset>
+          <h3 class="legend">Sign in!</h3>
+          <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Email">
+          <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+          <input type="submit" name="submit" value="Sign in!">
+          <p class="hidden" id="sign-in-error">Email or Password Incorrect</p>
+        </fieldset>
+      </form>
+
+      <form id="sign-out">
+        <fieldset>
+          <h3 class="legend">Sign Out!</h3>
+          <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+
+      <form class="" id="sign-up">
+        <fieldset>
+          <h3 class="legend">Sign up!</h3>
+          <input type="text" name="credentials[email]" id="sign-up-email" placeholder="Email">
+          <input type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm Password">
+          <input type="submit" name="submit" value="Sign up!">
+          <p class="hidden" id="sign-up-error">Email Taken or Passwords Don't Match</p>
+        </fieldset>
+      </form>
+      <form id="change-password">
+        <fieldset>
+          <h3 class="legend">Change Password!</h3>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+          <p class="hidden" id="change-password-success">Password Changed</p>
+          <p class="hidden" id="change-password-failure">Incorrect Info</p>
+        </fieldset>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <br>
+    <div><img src="https://raw.githubusercontent.com/ChrisAK/tic-tac-toe-project/master/assets/styles/pictures/Paper-Mario-icon.png" alt="Mario Head"></div>
+    <h1>It's-a me! Tic Tac Toe!</h1>
+    <h5 class="hidden" id="prompt-sign-in">SIGN IN! PLEASE!</h5>
+    <h2 class="win-time"></h2>
+    <div>
+      <table class="board hidden" id="board">
+    <tr>
+        <td class="cell" id="0"></td>
+        <td class="cell" id="1"></td>
+        <td class="cell" id="2"></td>
+    </tr>
+    <tr>
+        <td class="cell" id="3"></td>
+        <td class="cell" id="4"></td>
+        <td class="cell" id="5"></td>
+    </tr>
+    <tr>
+        <td class="cell" id="6"></td>
+        <td class="cell" id="7"></td>
+        <td class="cell" id="8"></td>
+    </tr>
+</table>
+</div>
+<br>
+<br>
+<button class="hidden" id="start-game">Start Game</button>
+<br>
+<br>
+<button class="hidden" id="reset">Reset</button>
+<br>
+<br>
+<div class="counters hidden">
+    <div class="box">
+      <label for="qty"><abbr title="Games Played">Games Played</abbr></label>
+      <h3 class="games-played" id="games-played"></h3>
+    </div>
+    <!--<div class="box">
+        <label for="qty"><abbr title="Win Counter">X Wins</abbr></label>
+        <h3 class="wins">0</h3>
+    </div>
+    <div class="box">
+        <label for="qty"><abbr title="Turn Counter">Turn</abbr></label>
+        <h3 class="turns">0</h3>
+    </div>
+    <div class="box">
+        <label for="qty"><abbr title="Loss Counter">Losses</abbr></label>
+        <h3 class="losses">0</h3>
+    </div> -->
+
+  </div>
+  <br>
+  <button class="hidden" id="get-games">Get Your Games!</button>
+</main>
+</body>
+</body>
+</html>
